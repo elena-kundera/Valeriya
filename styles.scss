@@ -7,9 +7,14 @@ $text-font: 'Jost', sans-serif;
 $main-color: rgb(198, 218, 246);
 $secondary-color:  rgba(222, 234, 250, 0.7);
 
+$phone-width: 640px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+
 @mixin text {
     font-family: $text-font;
-    font-size: larger;
+    font-size: 1.5vw;
     line-height: 185%;
 }
 
@@ -26,16 +31,20 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
 }
 
 .header {
-    height: 15vh;
+    position: sticky;
+    top: 0px;
+    height: 11vh;
     background-color: $main-color;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    z-index: 1;
+    
 
     .siteTitle {
         font-family: $logo-font;
         font-weight: 900;
-        font-size: 2.5rem;
+        font-size: 2.5vw;
     }
 
     .menu_container {
@@ -49,7 +58,7 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
             text-decoration: none;
             color: black;
             font-family: $text-font;
-            font-size: 1.3em;
+            font-size: 1.3vw;
         }
 
         a:hover {
@@ -58,8 +67,39 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
     }
             .phone_container {
             font-family: $text-font;
-            font-size: larger;
+            font-size: 1.5vw;
             }
+
+            @media (max-width: $phone-width) {
+                height: 10vh;
+
+                .siteTitle {
+                    text-align: center;
+                }
+                .menu_container {
+                    display: none;
+
+                    a {
+                        display: none;
+                    }
+                }
+                
+            }
+
+            @media (max-width: $tablet-width) {
+                .siteTitle {
+                    text-align: center;
+                }
+                .menu_container {
+                    display: none;
+
+                    a {
+                        display: none;
+                    }
+                }
+            }
+
+            
 }
 
 
@@ -69,26 +109,34 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
     margin: 5% 0;
 
     .competencesContainer {
-        
+
         h2 {
             text-align: center;
             margin: -6% 0 8% 0;
             font-family: $text-font;
             font-weight: 900;
-            font-size: 2.5rem;
-
+            font-size: 2.5vw;
         }
 
         ul{
+
             li {
                 @include text();
+                margin-left: 25%;
             }
         }
     }
 
+    .photo_container {
+        width: 50%;
+        display: flex;
+        justify-content: end;
+        margin-right: 15%;
+    }
+
     .photo {
-        max-width: 350px;
-        height: 500px;
+        width: 50%;
+        max-width: 50%;
         border-radius: 25px;
     }
 }
@@ -99,8 +147,8 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
     margin-bottom: 7%;
 
     .statisticsContainer {
-        width: 90%;
-        height: 160px;
+        width: 90vw;
+        height: 20vh;
         border-radius: 25px;
         background-color: $secondary-color;
         @include positioning();
@@ -112,7 +160,7 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
 
             p {
                 font-family: $text-font;
-                font-size: larger;
+                font-size: 1.5vw;
                 text-align: center;
             }
 
@@ -157,8 +205,9 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
 
         .philosophy_border {
             position: absolute;
-            width: 900px;
-            height: 500px;
+            width: 70%;
+            max-width: 70%;
+            height: 95%;
             border: 10px solid $main-color;
             top: 15%;
             left: 20%;
@@ -168,7 +217,36 @@ $secondary-color:  rgba(222, 234, 250, 0.7);
     }
 
     
+    @media (max-width: $phone-width) {
+        
+        .philosophy_border {
+            display: none;
+        }
 
+        .philosophy_img {
+            display: none;
+        }
+
+        .philosophy_textContainer {
+            width: 80vw;
+            display: flex;
+            justify-content: center;
+        }
+        
+    }
+
+    // @media (max-width: $tablet-width) {
+    //     .siteTitle {
+    //         text-align: center;
+    //     }
+    //     .menu_container {
+    //         display: none;
+
+    //         a {
+    //             display: none;
+    //         }
+    //     }
+    // }
     
 }
 
