@@ -200,6 +200,7 @@ $desktop-width: 1024px;
 
             p {
                 @include text();
+                text-indent: 30px;
             }
         }
 

@@ -155,6 +155,7 @@
   font-family: "Jost", sans-serif;
   font-size: 1.5vw;
   line-height: 185%;
+  text-indent: 30px;
 }
 .philosophy .philosophy_container .philosophy_border {
   position: absolute;
