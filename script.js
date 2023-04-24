@@ -5,8 +5,7 @@ modalButton.onclick = function () {
     diplom1.style.display = "block";
 }
 
-const closeDiplom1 = document.querySelector(".diplom1_modal");
 
-closeDiplom1.onclick = function () {
+diplom1.onclick = function () {
     diplom1.style.display = "none";
 }
